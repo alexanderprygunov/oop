@@ -5,7 +5,7 @@ using namespace std;
 
 void Flipbyte(int inputByte)
 {
-	int bitNumber = 0;
+	int bitNumber = 0; 
 	int outputByte = 0;
 	int twoInDegree = 128;
 	while (bitNumber != 8)
