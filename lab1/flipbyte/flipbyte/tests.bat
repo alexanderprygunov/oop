@@ -1,8 +1,8 @@
 set PROGRAM="%~1" 
 
 rem проверка числа, после изменения байтов которого ничего не изменится
-%PROGRAM% 0 > output
-fc output zero.txt
+%PROGRAM% 0 > "%TEMP%\output.txt"
+fc "%TEMP%\output.txt" zero.txt
 if ERRORLEVEL 1 goto error
 
 rem проверка колличества аргументов
@@ -10,13 +10,13 @@ rem проверка колличества аргументов
 if NOT ERRORLEVEL 1 goto error 
 
 rem проверка выхода за пределы
-%PROGRAM% -1 > output
-fc output overflow.txt
+%PROGRAM% -1 > "%TEMP%\output.txt"
+fc "%TEMP%\output.txt" overflow.txt
 if ERRORLEVEL 1 goto error 
 
 rem проверка оптимального варианта, должно вернуть 96
-%PROGRAM% 6 > output
-fc output good.txt
+%PROGRAM% 6 > "%TEMP%\output.txt"
+fc "%TEMP%\output.txt" good.txt
 if ERRORLEVEL 1 goto error
 
 echo Program testing succeeded 

@@ -12,7 +12,7 @@ void NumberReverseOrderBits(int inputByte)
 	{
 		if ((inputByte != 0) && (inputByte & 1))
 		{
-			outputByte += twoInDegree;
+			outputByte += twoInDegree; 
 		}
 		inputByte >>= 1;
 		++bitNumber;
