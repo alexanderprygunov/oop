@@ -17,9 +17,9 @@ void NumberReverseOrderBits(int inputByte)
 		inputByte >>= 1;
 		++bitNumber;
 		twoInDegree /= 2;
-	}
+	} 
 	cout << outputByte << endl;
-}
+}  
 
 int main(int argc, char * argv[]) 
 {

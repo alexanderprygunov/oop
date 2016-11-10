@@ -15,7 +15,7 @@ fc output overflow.txt
 if ERRORLEVEL 1 goto error 
 
 rem проверка оптимального варианта, должно вернуть 96
-%PROGRAM% 6 > output 
+%PROGRAM% 6 > output
 fc output good.txt
 if ERRORLEVEL 1 goto error
 
