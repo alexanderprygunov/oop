@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void Flipbyte(int inputByte)
+void ReverseOrderBits(int inputByte)
 {
 	int bitNumber = 0; 
 	int outputByte = 0;
@@ -38,7 +38,7 @@ int main(int argc, char * argv[])
 		return 1;
 	}
 
-	Flipbyte(inputByte);
+	ReverseOrderBits(inputByte);
 
 	return 0;
 }
