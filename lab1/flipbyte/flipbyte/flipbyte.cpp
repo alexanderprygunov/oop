@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void NumberReverseOrderBits(int inputByte)
+void ReverseBits(int inputByte)
 {
 	int bitNumber = 0;
 	int outputByte = 0;
@@ -38,7 +38,7 @@ int main(int argc, char * argv[])
 		return 1;
 	}
 
-	NumberReverseOrderBits(inputByte);
+	ReverseBits(inputByte);
 
 	return 0;
 }
