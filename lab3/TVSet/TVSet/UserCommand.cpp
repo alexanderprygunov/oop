@@ -33,7 +33,14 @@ bool CUserCommand::SelectChannel(int channelNumber)
 {
 	if (!m_tvSet.SelectChannel(channelNumber))
 	{
-		cout << "Invalid channel number." << endl;
+		if (!m_tvSet.IsTurnedOn())
+		{
+			cout << "You can't select channel. TVSet is turned off." << endl;
+		}
+		else
+		{
+			cout << "Invalid channel number." << endl;
+		}
 	}
 	
 	return true;
@@ -50,27 +57,26 @@ bool CUserCommand::SelectPreviousChannel()
 
 void CUserCommand::RunCommand(string & commandString)
 {
-	boost::to_lower(commandString);
 	vector<string> command;
 	boost::split(command, commandString, boost::is_any_of(" "));
 
-	if (command[0] == "turnon")
+	if (command[0] == "TurnOn")
 	{
 		TurnOn();
 	}
-	else if (command[0] == "turnoff")
+	else if (command[0] == "TurnOff")
 	{
 		TurnOff();
 	}
-	else if (command[0] == "info")
+	else if (command[0] == "Info")
 	{
 		Info();
 	}
-	else if (command[0] == "selectchannel" && command.size() == 2)
+	else if (command[0] == "SelectChannel" && command.size() == 2)
 	{
 		SelectChannel(stoi(command[1]));
 	}
-	else if (command[0] == "selectpreviouschannel")
+	else if (command[0] == "SelectPreviousChannel")
 	{
 		SelectPreviousChannel();
 	}
